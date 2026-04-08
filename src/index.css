@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f7f8f9;
+    min-height: 100vh;
+    margin: 0;
+  }
+}
+
+@layer components {
+  .mobile-container {
+    @apply w-[375px] h-screen max-h-[812px] bg-white overflow-hidden relative;
+    border: 1px solid #e5e5e5;
+  }
+
+  .btn-primary {
+    @apply w-full py-[12px] rounded-lg text-white font-semibold text-base transition-all duration-200 active:scale-[0.98];
+    background: linear-gradient(135deg, #6C25FF 0%, #8A4DFF 100%);
+  }
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #5a1ee8 0%, #7a3dee 100%);
+  }
+
+  .btn-secondary {
+    @apply w-full py-[12px] rounded-lg font-semibold text-base text-gray-800 transition-all duration-200 active:scale-[0.98];
+    background: #cebafc;
+  }
+  .btn-secondary:hover { background: #c4b8fa; }
+
+  .btn-disabled {
+    @apply w-full py-[12px] rounded-lg text-white font-semibold text-base cursor-pointer;
+    background: #cbcbcb;
+  }
+
+  .input-field-wrapper {
+    @apply relative border border-gray-300 rounded-lg bg-white;
+  }
+  .input-field-wrapper:focus-within {
+    @apply border-purple-500;
+  }
+
+  .input-label {
+    @apply absolute -top-2.5 left-3 text-xs font-medium px-1 bg-white;
+    color: #6C25FF;
+  }
+  .input-label-optional {
+    @apply absolute -top-2.5 left-3 text-xs font-medium px-1 bg-white text-gray-500;
+  }
+
+  .input-inner {
+    @apply w-full px-3 py-3.5 bg-transparent outline-none text-sm text-gray-700 rounded-lg;
+  }
+
+  .radio-circle {
+    @apply w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center transition-all duration-150;
+  }
+  .radio-circle.selected { @apply border-purple-600; }
+  .radio-dot {
+    @apply w-2.5 h-2.5 rounded-full;
+    background: #6C25FF;
+  }
+}
